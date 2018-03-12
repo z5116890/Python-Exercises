@@ -23,8 +23,30 @@ fib_dict = {
 # Do not print it from this function
 def fib_sequence(num):
 	# to be completed
+	if num not in fib_dict: # 4
+		fib_dict[num] = fib_sequence(num - 1) + fib_sequence(num - 2)
+	else:
+		pass 
+
 	return fib_dict[num]
+
+
+
+
 
 if __name__ == '__main__':
 	#write code to accept user input, call the function and print the result
-	pass
+	print(fib_sequence(10))
+
+
+	num = int(input("enter number "))
+	try:
+		val = int(num)
+	except ValueError:
+		print("That's not an int!")
+
+	fib = fib_sequence(num)
+	print(fib)
+
+
+
